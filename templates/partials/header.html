@@ -1,0 +1,75 @@
+{# Site Header #}
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <!-- Logo -->
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        {{ site.name | default(value='Business Elite') }}
+      </a>
+
+      <!-- Main Navigation -->
+      <nav class="main-nav">
+        <a href="/" class="nav-link {{ 'active' if current_page == 'home' else '' }}">Home</a>
+
+        <div class="nav-dropdown">
+          <a href="/about" class="nav-link {{ 'active' if current_page == 'about' else '' }}">
+            About
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="/about" class="nav-dropdown-link">Our Company</a>
+            <a href="/team" class="nav-dropdown-link">Our Team</a>
+            <a href="/careers" class="nav-dropdown-link">Careers</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-link {{ 'active' if current_page == 'services' else '' }}">
+            Services
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="/services" class="nav-dropdown-link">All Services</a>
+            <a href="/services/consulting" class="nav-dropdown-link">Consulting</a>
+            <a href="/services/development" class="nav-dropdown-link">Development</a>
+            <a href="/services/marketing" class="nav-dropdown-link">Marketing</a>
+          </div>
+        </div>
+
+        <a href="/case-studies" class="nav-link {{ 'active' if current_page == 'case-studies' else '' }}">Case Studies</a>
+        <a href="/pricing" class="nav-link {{ 'active' if current_page == 'pricing' else '' }}">Pricing</a>
+        <a href="/blog" class="nav-link {{ 'active' if current_page == 'blog' else '' }}">Blog</a>
+        <a href="/contact" class="nav-link {{ 'active' if current_page == 'contact' else '' }}">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="/contact" class="btn btn--primary">Get Started</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span class="menu-toggle-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <nav>
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/team" class="mobile-nav-link">Team</a>
+    <a href="/services" class="mobile-nav-link">Services</a>
+    <a href="/case-studies" class="mobile-nav-link">Case Studies</a>
+    <a href="/pricing" class="mobile-nav-link">Pricing</a>
+    <a href="/blog" class="mobile-nav-link">Blog</a>
+    <a href="/careers" class="mobile-nav-link">Careers</a>
+    <a href="/contact" class="mobile-nav-link">Contact</a>
+  </nav>
+  <div style="margin-top: var(--space-8);">
+    <a href="/contact" class="btn btn--primary btn--lg" style="width: 100%;">Get Started</a>
+  </div>
+</div>

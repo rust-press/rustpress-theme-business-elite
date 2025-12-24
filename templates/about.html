@@ -1,0 +1,187 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}About Us | {{ site.name }}{% endblock %}
+{% block description %}Learn about our mission, values, and the team behind {{ site.name }}.{% endblock %}
+
+{% block body_class %}page-about{% endblock %}
+
+{% block content %}
+{# Hero Section #}
+<section class="section" style="padding-top: calc(var(--header-height) + var(--space-16));">
+  <div class="container">
+    <div class="section-header text-center" style="max-width: 800px;">
+      <span class="section-label">About Us</span>
+      <h1 class="heading-display">We Help Businesses <span class="text-gradient">Thrive</span></h1>
+      <p class="lead" style="margin-top: var(--space-6);">
+        For over 15 years, we've been partnering with organizations worldwide to drive innovation, optimize operations, and achieve sustainable growth.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# Company Image #}
+<section class="section pt-0">
+  <div class="container">
+    <div style="border-radius: var(--radius-2xl); overflow: hidden;" data-animate="scale">
+      <img src="{{ site.about_hero_image | default(value='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=500&fit=crop') }}" alt="Our Team" style="width: 100%; object-fit: cover;">
+    </div>
+  </div>
+</section>
+
+{# Mission & Vision #}
+<section class="section bg-secondary">
+  <div class="container">
+    <div class="grid grid-2" style="gap: var(--space-16);">
+      <div data-animate="fade-up">
+        <span class="section-label">Our Mission</span>
+        <h2 class="heading-lg" style="margin-bottom: var(--space-6);">Empowering businesses to reach their full potential</h2>
+        <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-relaxed);">
+          {{ site.mission | default(value='We believe every business has untapped potential. Our mission is to help organizations unlock that potential through strategic consulting, innovative solutions, and dedicated partnership. We\'re committed to delivering measurable results that drive long-term success.') }}
+        </p>
+      </div>
+      <div data-animate="fade-up" data-delay="200">
+        <span class="section-label">Our Vision</span>
+        <h2 class="heading-lg" style="margin-bottom: var(--space-6);">To be the world's most trusted business partner</h2>
+        <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-relaxed);">
+          {{ site.vision | default(value='We envision a world where every organization—regardless of size or industry—has access to world-class strategic guidance. We strive to be the partner that businesses turn to first when they need to navigate change, seize opportunities, and overcome challenges.') }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Values #}
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-label">Our Values</span>
+      <h2 class="heading-xl">What Drives Us</h2>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="feature-item" data-animate="fade-up" data-delay="100">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3 class="feature-title">Integrity</h3>
+        <p class="feature-text">We operate with complete transparency and honesty in everything we do.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="200">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <h3 class="feature-title">Innovation</h3>
+        <p class="feature-text">We embrace new ideas and approaches to solve complex challenges.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="300">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h3 class="feature-title">Collaboration</h3>
+        <p class="feature-text">We work as true partners, treating your success as our own.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="400">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        </div>
+        <h3 class="feature-title">Excellence</h3>
+        <p class="feature-text">We hold ourselves to the highest standards in every engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Stats #}
+<section class="section bg-secondary">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" data-animate="fade-up" data-delay="100">
+        <div class="stat-number" data-counter="500" data-suffix="+">0</div>
+        <div class="stat-label">Clients Worldwide</div>
+      </div>
+      <div class="stat-item" data-animate="fade-up" data-delay="200">
+        <div class="stat-number" data-counter="50" data-suffix="+">0</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+      <div class="stat-item" data-animate="fade-up" data-delay="300">
+        <div class="stat-number" data-counter="200" data-suffix="+">0</div>
+        <div class="stat-label">Team Members</div>
+      </div>
+      <div class="stat-item" data-animate="fade-up" data-delay="400">
+        <div class="stat-number" data-counter="15" data-suffix="+">0</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# History Timeline #}
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-label">Our Journey</span>
+      <h2 class="heading-xl">Company History</h2>
+    </div>
+
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div style="display: flex; gap: var(--space-6); padding-bottom: var(--space-10); position: relative;" data-animate="fade-up" data-delay="100">
+        <div style="width: 80px; flex-shrink: 0; text-align: right;">
+          <span style="font-weight: var(--font-bold); color: var(--color-primary);">2009</span>
+        </div>
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-primary); margin-top: var(--space-1); flex-shrink: 0; position: relative; z-index: 1;"></div>
+        <div style="position: absolute; left: 98px; top: 18px; bottom: 0; width: 2px; background: var(--border-color);"></div>
+        <div>
+          <h3 style="font-size: var(--text-lg); font-weight: var(--font-semibold); margin-bottom: var(--space-2);">Company Founded</h3>
+          <p style="color: var(--text-secondary);">Started with a small team of 5 consultants with a vision to transform businesses.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: var(--space-6); padding-bottom: var(--space-10); position: relative;" data-animate="fade-up" data-delay="200">
+        <div style="width: 80px; flex-shrink: 0; text-align: right;">
+          <span style="font-weight: var(--font-bold); color: var(--color-primary);">2014</span>
+        </div>
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-primary); margin-top: var(--space-1); flex-shrink: 0; position: relative; z-index: 1;"></div>
+        <div style="position: absolute; left: 98px; top: 18px; bottom: 0; width: 2px; background: var(--border-color);"></div>
+        <div>
+          <h3 style="font-size: var(--text-lg); font-weight: var(--font-semibold); margin-bottom: var(--space-2);">Global Expansion</h3>
+          <p style="color: var(--text-secondary);">Opened offices in Europe and Asia, serving clients across 20+ countries.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: var(--space-6); padding-bottom: var(--space-10); position: relative;" data-animate="fade-up" data-delay="300">
+        <div style="width: 80px; flex-shrink: 0; text-align: right;">
+          <span style="font-weight: var(--font-bold); color: var(--color-primary);">2019</span>
+        </div>
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-primary); margin-top: var(--space-1); flex-shrink: 0; position: relative; z-index: 1;"></div>
+        <div style="position: absolute; left: 98px; top: 18px; bottom: 0; width: 2px; background: var(--border-color);"></div>
+        <div>
+          <h3 style="font-size: var(--text-lg); font-weight: var(--font-semibold); margin-bottom: var(--space-2);">Digital Innovation Hub</h3>
+          <p style="color: var(--text-secondary);">Launched our technology division to lead digital transformation initiatives.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: var(--space-6);" data-animate="fade-up" data-delay="400">
+        <div style="width: 80px; flex-shrink: 0; text-align: right;">
+          <span style="font-weight: var(--font-bold); color: var(--color-primary);">Today</span>
+        </div>
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--color-primary); margin-top: var(--space-1); flex-shrink: 0;"></div>
+        <div>
+          <h3 style="font-size: var(--text-lg); font-weight: var(--font-semibold); margin-bottom: var(--space-2);">Industry Leader</h3>
+          <p style="color: var(--text-secondary);">Recognized as a top consulting firm with 500+ clients and 200+ team members worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# CTA #}
+<section class="section">
+  <div class="container">
+    <div class="cta" data-animate="scale">
+      <h2 class="heading-lg cta-title">Ready to Work Together?</h2>
+      <p class="cta-text">Join hundreds of successful companies that trust us with their growth.</p>
+      <a href="/contact" class="btn btn--white btn--lg">Get in Touch</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

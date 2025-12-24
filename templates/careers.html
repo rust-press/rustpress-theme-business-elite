@@ -1,0 +1,142 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Careers | {{ site.name }}{% endblock %}
+{% block description %}Join our team and help shape the future of business consulting.{% endblock %}
+
+{% block body_class %}page-careers{% endblock %}
+
+{% block content %}
+{# Hero Section #}
+<section class="section" style="padding-top: calc(var(--header-height) + var(--space-16));">
+  <div class="container">
+    <div class="section-header text-center" style="max-width: 700px;">
+      <span class="section-label">Careers</span>
+      <h1 class="heading-display">Join Our <span class="text-gradient">Team</span></h1>
+      <p class="lead" style="margin-top: var(--space-6);">
+        We're always looking for talented individuals to help us make an impact. Find your next opportunity here.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# Why Join Us #}
+<section class="section pt-0">
+  <div class="container">
+    <div class="grid grid-4">
+      <div class="feature-item" data-animate="fade-up" data-delay="100">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+        </div>
+        <h3 class="feature-title">Growth</h3>
+        <p class="feature-text">Continuous learning and career development opportunities.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="200">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h3 class="feature-title">Collaboration</h3>
+        <p class="feature-text">Work with talented people from diverse backgrounds.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="300">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <h3 class="feature-title">Impact</h3>
+        <p class="feature-text">Make a real difference for clients around the world.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="400">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </div>
+        <h3 class="feature-title">Flexibility</h3>
+        <p class="feature-text">Work-life balance with flexible arrangements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Open Positions #}
+<section class="section bg-secondary">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-label">Open Positions</span>
+      <h2 class="heading-xl">Current Opportunities</h2>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto;">
+      {% for job in jobs %}
+      <a href="{{ job.url }}" class="job-card" data-animate="fade-up" data-delay="{{ loop.index * 100 }}">
+        <div class="job-info">
+          <h3 class="job-title">{{ job.title }}</h3>
+          <div class="job-meta">
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> {{ job.location }}</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> {{ job.type }}</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> {{ job.department }}</span>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      {% else %}
+      <a href="/careers/senior-consultant" class="job-card" style="margin-bottom: var(--space-4);" data-animate="fade-up" data-delay="100">
+        <div class="job-info">
+          <h3 class="job-title">Senior Strategy Consultant</h3>
+          <div class="job-meta">
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> San Francisco, CA</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Full-time</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Consulting</span>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <a href="/careers/data-analyst" class="job-card" style="margin-bottom: var(--space-4);" data-animate="fade-up" data-delay="200">
+        <div class="job-info">
+          <h3 class="job-title">Senior Data Analyst</h3>
+          <div class="job-meta">
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> New York, NY</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Full-time</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Analytics</span>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <a href="/careers/project-manager" class="job-card" style="margin-bottom: var(--space-4);" data-animate="fade-up" data-delay="300">
+        <div class="job-info">
+          <h3 class="job-title">Project Manager</h3>
+          <div class="job-meta">
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Remote</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Full-time</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Operations</span>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <a href="/careers/business-analyst" class="job-card" data-animate="fade-up" data-delay="400">
+        <div class="job-info">
+          <h3 class="job-title">Business Analyst</h3>
+          <div class="job-meta">
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Chicago, IL</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Full-time</span>
+            <span class="job-tag"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Consulting</span>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# CTA #}
+<section class="section">
+  <div class="container">
+    <div class="cta" data-animate="scale">
+      <h2 class="heading-lg cta-title">Don't See the Right Role?</h2>
+      <p class="cta-text">We're always interested in meeting talented people. Send us your resume and we'll keep you in mind for future opportunities.</p>
+      <a href="/contact" class="btn btn--white btn--lg">Send Your Resume</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

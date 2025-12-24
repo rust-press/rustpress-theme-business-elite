@@ -1,0 +1,187 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Blog | {{ site.name }}{% endblock %}
+{% block description %}Insights, trends, and best practices from our team of experts.{% endblock %}
+
+{% block body_class %}page-blog{% endblock %}
+
+{% block content %}
+{# Hero Section #}
+<section class="section" style="padding-top: calc(var(--header-height) + var(--space-16));">
+  <div class="container">
+    <div class="section-header text-center" style="max-width: 700px;">
+      <span class="section-label">Blog</span>
+      <h1 class="heading-display">Insights & <span class="text-gradient">Articles</span></h1>
+      <p class="lead" style="margin-top: var(--space-6);">
+        Expert perspectives on business strategy, technology, and industry trends.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# Featured Post #}
+{% if posts | length > 0 %}
+{% set featured = posts | first %}
+<section class="section pt-0">
+  <div class="container">
+    <article class="card" style="display: grid; grid-template-columns: 1.2fr 1fr; overflow: hidden;" data-animate="fade-up">
+      <div class="card-image" style="aspect-ratio: auto;">
+        <img src="{{ featured.featured_image | default(value='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop') }}" alt="{{ featured.title }}" style="height: 100%;">
+      </div>
+      <div style="padding: var(--space-10); display: flex; flex-direction: column; justify-content: center;">
+        <span class="card-label">Featured</span>
+        <h2 style="font-size: var(--text-3xl); font-weight: var(--font-bold); margin-bottom: var(--space-4);">
+          <a href="{{ featured.url }}">{{ featured.title | default(value='The Future of Business Strategy in 2024') }}</a>
+        </h2>
+        <p style="color: var(--text-secondary); margin-bottom: var(--space-6); line-height: var(--leading-relaxed);">
+          {{ featured.excerpt | default(value='Discover the key trends shaping business strategy and how leading companies are adapting to change.') | truncate(length=150) }}
+        </p>
+        <div class="post-meta">
+          <span class="post-meta-item">{{ featured.date | default(value='Dec 10, 2024') | date(format='%b %d, %Y') }}</span>
+          <span>•</span>
+          <span class="post-meta-item">{{ featured.reading_time | default(value='8') }} min read</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+{% endif %}
+
+{# Blog Grid #}
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3">
+      {% for post in posts | slice(start=1) %}
+      <article class="card" data-animate="fade-up" data-delay="{{ loop.index * 100 }}">
+        <div class="card-image">
+          <img src="{{ post.featured_image }}" alt="{{ post.title }}">
+        </div>
+        <div class="card-body">
+          <span class="card-label">{{ post.category }}</span>
+          <h3 class="card-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p class="card-text">{{ post.excerpt | truncate(length=100) }}</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">{{ post.date | date(format='%b %d, %Y') }}</span>
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">{{ post.reading_time }} min</span>
+        </div>
+      </article>
+      {% else %}
+      <article class="card" data-animate="fade-up" data-delay="100">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="Leadership">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Leadership</span>
+          <h3 class="card-title"><a href="/blog/leadership-digital-age">Leading Teams in the Digital Age</a></h3>
+          <p class="card-text">Essential strategies for modern business leadership and team management.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">Dec 5, 2024</span>
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">6 min</span>
+        </div>
+      </article>
+
+      <article class="card" data-animate="fade-up" data-delay="200">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="Analytics">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Analytics</span>
+          <h3 class="card-title"><a href="/blog/data-driven-decisions">Making Data-Driven Decisions</a></h3>
+          <p class="card-text">How to leverage analytics for better business outcomes.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">Nov 28, 2024</span>
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">5 min</span>
+        </div>
+      </article>
+
+      <article class="card" data-animate="fade-up" data-delay="300">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop" alt="Innovation">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Innovation</span>
+          <h3 class="card-title"><a href="/blog/innovation-culture">Building a Culture of Innovation</a></h3>
+          <p class="card-text">How to foster creativity and innovation within your organization.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">Nov 20, 2024</span>
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">7 min</span>
+        </div>
+      </article>
+
+      <article class="card" data-animate="fade-up" data-delay="400">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Digital">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Digital</span>
+          <h3 class="card-title"><a href="/blog/digital-transformation-guide">Complete Guide to Digital Transformation</a></h3>
+          <p class="card-text">Everything you need to know about modernizing your business.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">Nov 15, 2024</span>
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">10 min</span>
+        </div>
+      </article>
+
+      <article class="card" data-animate="fade-up" data-delay="500">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop" alt="Team">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Management</span>
+          <h3 class="card-title"><a href="/blog/remote-team-management">Managing Remote Teams Effectively</a></h3>
+          <p class="card-text">Best practices for leading distributed teams in today's workplace.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">Nov 10, 2024</span>
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">6 min</span>
+        </div>
+      </article>
+
+      <article class="card" data-animate="fade-up" data-delay="600">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Strategy">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Strategy</span>
+          <h3 class="card-title"><a href="/blog/strategic-planning">Strategic Planning for Growth</a></h3>
+          <p class="card-text">A framework for developing effective business growth strategies.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">Nov 5, 2024</span>
+          <span style="font-size: var(--text-sm); color: var(--text-tertiary);">8 min</span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {# Pagination #}
+    <nav style="display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-12);">
+      <a href="#" class="btn btn--ghost">Previous</a>
+      <a href="#" class="btn btn--primary">1</a>
+      <a href="#" class="btn btn--ghost">2</a>
+      <a href="#" class="btn btn--ghost">3</a>
+      <a href="#" class="btn btn--ghost">Next</a>
+    </nav>
+  </div>
+</section>
+
+{# Newsletter #}
+<section class="section bg-secondary">
+  <div class="container">
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <span class="section-label">Newsletter</span>
+      <h2 class="heading-lg" style="margin-bottom: var(--space-4);">Stay Informed</h2>
+      <p style="color: var(--text-secondary); margin-bottom: var(--space-8);">Get the latest insights delivered directly to your inbox.</p>
+      <form style="display: flex; gap: var(--space-4);">
+        <input type="email" placeholder="Enter your email" class="form-input" style="flex: 1;">
+        <button type="submit" class="btn btn--primary btn--lg">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

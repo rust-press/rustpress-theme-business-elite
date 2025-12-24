@@ -1,0 +1,234 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Pricing | {{ site.name }}{% endblock %}
+{% block description %}Transparent pricing plans designed to fit businesses of all sizes.{% endblock %}
+
+{% block body_class %}page-pricing{% endblock %}
+
+{% block content %}
+{# Hero Section #}
+<section class="section" style="padding-top: calc(var(--header-height) + var(--space-16));">
+  <div class="container">
+    <div class="section-header text-center" style="max-width: 700px;">
+      <span class="section-label">Pricing</span>
+      <h1 class="heading-display">Simple, Transparent <span class="text-gradient">Pricing</span></h1>
+      <p class="lead" style="margin-top: var(--space-6);">
+        Choose the plan that best fits your business needs. All plans include our core features.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# Pricing Cards #}
+<section class="section pt-0">
+  <div class="container">
+    <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+      {# Starter Plan #}
+      <div class="pricing-card" data-animate="fade-up" data-delay="100">
+        <h3 class="pricing-name">Starter</h3>
+        <div class="pricing-price">$2,500<span>/mo</span></div>
+        <p class="pricing-description">Perfect for small businesses getting started with consulting.</p>
+        <ul class="pricing-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Up to 20 hours/month
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            1 dedicated consultant
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Monthly strategy sessions
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Email support
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Basic analytics reports
+          </li>
+        </ul>
+        <a href="/contact?plan=starter" class="btn btn--outline btn--lg" style="width: 100%;">Get Started</a>
+      </div>
+
+      {# Professional Plan #}
+      <div class="pricing-card featured" data-animate="fade-up" data-delay="200">
+        <h3 class="pricing-name">Professional</h3>
+        <div class="pricing-price">$7,500<span>/mo</span></div>
+        <p class="pricing-description">Ideal for growing businesses ready to scale.</p>
+        <ul class="pricing-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Up to 60 hours/month
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            2 dedicated consultants
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Weekly strategy sessions
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Priority support
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Advanced analytics & dashboards
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Quarterly business reviews
+          </li>
+        </ul>
+        <a href="/contact?plan=professional" class="btn btn--primary btn--lg" style="width: 100%;">Get Started</a>
+      </div>
+
+      {# Enterprise Plan #}
+      <div class="pricing-card" data-animate="fade-up" data-delay="300">
+        <h3 class="pricing-name">Enterprise</h3>
+        <div class="pricing-price">Custom</div>
+        <p class="pricing-description">For large organizations with complex needs.</p>
+        <ul class="pricing-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Unlimited hours
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Dedicated team
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            On-site support available
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            24/7 priority support
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Custom integrations
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            SLA guarantee
+          </li>
+        </ul>
+        <a href="/contact?plan=enterprise" class="btn btn--outline btn--lg" style="width: 100%;">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Features Comparison #}
+<section class="section bg-secondary">
+  <div class="container">
+    <h2 class="heading-md text-center" style="margin-bottom: var(--space-12);">Compare Plans</h2>
+    <div style="max-width: 900px; margin: 0 auto; overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th style="text-align: left; padding: var(--space-4); border-bottom: 2px solid var(--border-color);">Feature</th>
+            <th style="text-align: center; padding: var(--space-4); border-bottom: 2px solid var(--border-color);">Starter</th>
+            <th style="text-align: center; padding: var(--space-4); border-bottom: 2px solid var(--border-color);">Professional</th>
+            <th style="text-align: center; padding: var(--space-4); border-bottom: 2px solid var(--border-color);">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Monthly Hours</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">20</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">60</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Unlimited</td>
+          </tr>
+          <tr>
+            <td style="padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Dedicated Consultants</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">1</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">2</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Team</td>
+          </tr>
+          <tr>
+            <td style="padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Strategy Sessions</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Monthly</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Weekly</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Daily</td>
+          </tr>
+          <tr>
+            <td style="padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Analytics Reports</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Basic</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Advanced</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">Custom</td>
+          </tr>
+          <tr>
+            <td style="padding: var(--space-4); border-bottom: 1px solid var(--border-color);">On-site Support</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">—</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);">—</td>
+            <td style="text-align: center; padding: var(--space-4); border-bottom: 1px solid var(--border-color);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></td>
+          </tr>
+          <tr>
+            <td style="padding: var(--space-4);">SLA Guarantee</td>
+            <td style="text-align: center; padding: var(--space-4);">—</td>
+            <td style="text-align: center; padding: var(--space-4);">—</td>
+            <td style="text-align: center; padding: var(--space-4);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{# FAQ #}
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-label">FAQ</span>
+      <h2 class="heading-lg">Common Questions</h2>
+    </div>
+
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div class="faq-item" data-animate="fade-up" data-delay="100">
+        <button class="faq-question">
+          Can I change plans later?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.</div>
+        </div>
+      </div>
+      <div class="faq-item" data-animate="fade-up" data-delay="200">
+        <button class="faq-question">
+          What's the contract length?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Our standard plans are month-to-month with no long-term commitment. Enterprise plans may include annual contracts with additional benefits.</div>
+        </div>
+      </div>
+      <div class="faq-item" data-animate="fade-up" data-delay="300">
+        <button class="faq-question">
+          Do you offer refunds?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We offer a 30-day money-back guarantee for new clients. If you're not satisfied, we'll provide a full refund.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# CTA #}
+<section class="section">
+  <div class="container">
+    <div class="cta" data-animate="scale">
+      <h2 class="heading-lg cta-title">Not Sure Which Plan is Right?</h2>
+      <p class="cta-text">Let's discuss your needs and find the perfect solution for your business.</p>
+      <a href="/contact" class="btn btn--white btn--lg">Schedule a Consultation</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

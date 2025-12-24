@@ -1,0 +1,47 @@
+{
+  "name": "Business Elite",
+  "version": "1.0.0",
+  "description": "A professional business theme with 15 pages for corporate websites, agencies, and enterprises",
+  "author": "RustPress",
+  "license": "MIT",
+  "colors": {
+    "primary": "#1E40AF",
+    "primary_light": "#3B82F6",
+    "primary_dark": "#1E3A8A",
+    "secondary": "#059669",
+    "accent": "#F59E0B",
+    "background": "#FFFFFF",
+    "surface": "#F8FAFC",
+    "text": "#1E293B",
+    "text_light": "#64748B",
+    "border": "#E2E8F0"
+  },
+  "fonts": {
+    "heading": "Plus Jakarta Sans",
+    "body": "Inter"
+  },
+  "features": {
+    "darkMode": true,
+    "megaMenu": true,
+    "stickyHeader": true,
+    "backToTop": true,
+    "smoothScroll": true
+  },
+  "pages": [
+    "home",
+    "about",
+    "team",
+    "services",
+    "service-detail",
+    "case-studies",
+    "case-study",
+    "pricing",
+    "blog",
+    "post",
+    "contact",
+    "careers",
+    "faq",
+    "privacy",
+    "404"
+  ]
+}

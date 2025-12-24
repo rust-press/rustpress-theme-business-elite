@@ -1,0 +1,175 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}{{ case.title | default(value='Case Study') }} | {{ site.name }}{% endblock %}
+{% block description %}{{ case.excerpt | default(value='Learn how we helped this client achieve remarkable results.') }}{% endblock %}
+
+{% block body_class %}page-case-study{% endblock %}
+
+{% block content %}
+{# Hero Section #}
+<section class="section" style="padding-top: calc(var(--header-height) + var(--space-16));">
+  <div class="container">
+    <div style="max-width: 900px;">
+      <a href="/case-studies" class="btn btn--ghost btn--sm" style="margin-bottom: var(--space-6);" data-animate="fade-up">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Case Studies
+      </a>
+      <span class="section-label" data-animate="fade-up" data-delay="50">{{ case.industry | default(value='Finance') }}</span>
+      <h1 class="heading-xl" style="margin-bottom: var(--space-6);" data-animate="fade-up" data-delay="100">{{ case.title | default(value='Global Bank Digital Transformation') }}</h1>
+      <p style="color: var(--text-secondary); font-size: var(--text-xl); line-height: var(--leading-relaxed);" data-animate="fade-up" data-delay="150">
+        {{ case.excerpt | default(value='How we helped a leading financial institution increase digital adoption by 300% and reduce operational costs by $25M annually.') }}
+      </p>
+    </div>
+  </div>
+</section>
+
+{# Featured Image #}
+<section class="section pt-0">
+  <div class="container">
+    <div style="border-radius: var(--radius-2xl); overflow: hidden;" data-animate="scale">
+      <img src="{{ case.featured_image | default(value='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop') }}" alt="{{ case.title }}" style="width: 100%; object-fit: cover;">
+    </div>
+  </div>
+</section>
+
+{# Stats Bar #}
+<section class="section--sm bg-secondary">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" data-animate="fade-up" data-delay="100">
+        <div class="stat-number">{{ case.stat_1_value | default(value='300%') }}</div>
+        <div class="stat-label">{{ case.stat_1_label | default(value='Digital Adoption') }}</div>
+      </div>
+      <div class="stat-item" data-animate="fade-up" data-delay="200">
+        <div class="stat-number">{{ case.stat_2_value | default(value='$25M') }}</div>
+        <div class="stat-label">{{ case.stat_2_label | default(value='Cost Savings') }}</div>
+      </div>
+      <div class="stat-item" data-animate="fade-up" data-delay="300">
+        <div class="stat-number">{{ case.stat_3_value | default(value='6 Months') }}</div>
+        <div class="stat-label">{{ case.stat_3_label | default(value='Implementation') }}</div>
+      </div>
+      <div class="stat-item" data-animate="fade-up" data-delay="400">
+        <div class="stat-number">{{ case.stat_4_value | default(value='98%') }}</div>
+        <div class="stat-label">{{ case.stat_4_label | default(value='User Satisfaction') }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Case Study Content #}
+<section class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 300px; gap: var(--space-16);">
+      <div>
+        {# Challenge #}
+        <div style="margin-bottom: var(--space-12);" data-animate="fade-up">
+          <h2 class="heading-md" style="margin-bottom: var(--space-4);">The Challenge</h2>
+          <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-loose);">
+            {{ case.challenge | default(value='Our client, a major global bank with operations in over 30 countries, was struggling with legacy systems that hindered their ability to compete in an increasingly digital marketplace. Customer satisfaction was declining, operational costs were rising, and the bank was losing market share to more agile fintech competitors.') }}
+          </p>
+        </div>
+
+        {# Solution #}
+        <div style="margin-bottom: var(--space-12);" data-animate="fade-up">
+          <h2 class="heading-md" style="margin-bottom: var(--space-4);">Our Solution</h2>
+          <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-loose);">
+            {{ case.solution | default(value='We developed a comprehensive digital transformation strategy that addressed both customer-facing applications and back-office operations. This included implementing a new mobile banking platform, automating key processes, and establishing a data analytics framework to drive decision-making.') }}
+          </p>
+        </div>
+
+        {# Results #}
+        <div style="margin-bottom: var(--space-12);" data-animate="fade-up">
+          <h2 class="heading-md" style="margin-bottom: var(--space-4);">The Results</h2>
+          <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-loose);">
+            {{ case.results | default(value='Within 12 months of implementation, the bank saw a 300% increase in digital banking adoption, $25M in annual cost savings through automation, and a significant improvement in customer satisfaction scores. The bank has since regained market share and is now considered a digital leader in their industry.') }}
+          </p>
+        </div>
+
+        {# Testimonial #}
+        <div class="testimonial-card" style="margin-bottom: var(--space-12);" data-animate="fade-up">
+          <div class="testimonial-rating">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">"{{ case.testimonial_quote | default(value='Business Elite was instrumental in our digital transformation journey. Their strategic guidance and hands-on support helped us achieve results that exceeded our expectations.') }}"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="{{ case.testimonial_avatar | default(value='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop') }}" alt="{{ case.testimonial_name }}">
+            </div>
+            <div>
+              <div class="testimonial-name">{{ case.testimonial_name | default(value='John Smith') }}</div>
+              <div class="testimonial-role">{{ case.testimonial_role | default(value='CEO, Global Bank') }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {# Sidebar #}
+      <aside>
+        <div style="position: sticky; top: calc(var(--header-height) + var(--space-8));">
+          <div style="background: var(--bg-secondary); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-6);">
+            <h3 style="font-size: var(--text-sm); font-weight: var(--font-semibold); text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-tertiary); margin-bottom: var(--space-4);">Project Details</h3>
+            <div style="margin-bottom: var(--space-4);">
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary); margin-bottom: var(--space-1);">Client</div>
+              <div style="font-weight: var(--font-medium);">{{ case.client | default(value='Global Bank Inc.') }}</div>
+            </div>
+            <div style="margin-bottom: var(--space-4);">
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary); margin-bottom: var(--space-1);">Industry</div>
+              <div style="font-weight: var(--font-medium);">{{ case.industry | default(value='Financial Services') }}</div>
+            </div>
+            <div style="margin-bottom: var(--space-4);">
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary); margin-bottom: var(--space-1);">Services</div>
+              <div style="font-weight: var(--font-medium);">{{ case.services | default(value='Digital Transformation, Strategy') }}</div>
+            </div>
+            <div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary); margin-bottom: var(--space-1);">Duration</div>
+              <div style="font-weight: var(--font-medium);">{{ case.duration | default(value='12 Months') }}</div>
+            </div>
+          </div>
+
+          <a href="/contact" class="btn btn--primary btn--lg" style="width: 100%;">Start Your Project</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+{# Related Case Studies #}
+<section class="section bg-secondary">
+  <div class="container">
+    <h2 class="heading-md text-center" style="margin-bottom: var(--space-10);">Related Case Studies</h2>
+    <div class="grid grid-3">
+      <article class="card" data-animate="fade-up" data-delay="100">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="Healthcare">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Healthcare</span>
+          <h3 class="card-title"><a href="/case-studies/healthcare">Healthcare Analytics Platform</a></h3>
+        </div>
+      </article>
+      <article class="card" data-animate="fade-up" data-delay="200">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop" alt="Retail">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Retail</span>
+          <h3 class="card-title"><a href="/case-studies/retail">Supply Chain Optimization</a></h3>
+        </div>
+      </article>
+      <article class="card" data-animate="fade-up" data-delay="300">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="Technology">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Technology</span>
+          <h3 class="card-title"><a href="/case-studies/tech">Tech Startup Scaling</a></h3>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+{% endblock %}

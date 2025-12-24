@@ -1,0 +1,169 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Case Studies | {{ site.name }}{% endblock %}
+{% block description %}Explore our success stories and see how we've helped businesses achieve their goals.{% endblock %}
+
+{% block body_class %}page-case-studies{% endblock %}
+
+{% block content %}
+{# Hero Section #}
+<section class="section" style="padding-top: calc(var(--header-height) + var(--space-16));">
+  <div class="container">
+    <div class="section-header text-center" style="max-width: 700px;">
+      <span class="section-label">Case Studies</span>
+      <h1 class="heading-display">Success <span class="text-gradient">Stories</span></h1>
+      <p class="lead" style="margin-top: var(--space-6);">
+        Real results from real clients. See how we've helped organizations transform their businesses.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# Filter #}
+<section class="section--sm pt-0">
+  <div class="container">
+    <div style="display: flex; justify-content: center; gap: var(--space-2); flex-wrap: wrap;">
+      <button class="btn btn--primary btn--sm">All</button>
+      <button class="btn btn--ghost btn--sm">Finance</button>
+      <button class="btn btn--ghost btn--sm">Healthcare</button>
+      <button class="btn btn--ghost btn--sm">Retail</button>
+      <button class="btn btn--ghost btn--sm">Technology</button>
+      <button class="btn btn--ghost btn--sm">Manufacturing</button>
+    </div>
+  </div>
+</section>
+
+{# Case Studies Grid #}
+<section class="section pt-0">
+  <div class="container">
+    <div class="grid grid-2" style="gap: var(--space-10);">
+      {% for case in case_studies %}
+      <article class="card" data-animate="fade-up" data-delay="{{ loop.index * 100 }}">
+        <div class="card-image" style="aspect-ratio: 16/9;">
+          <img src="{{ case.image }}" alt="{{ case.title }}">
+        </div>
+        <div class="card-body">
+          <span class="card-label">{{ case.industry }}</span>
+          <h3 class="card-title"><a href="{{ case.url }}">{{ case.title }}</a></h3>
+          <p class="card-text">{{ case.excerpt | truncate(length=150) }}</p>
+          <div style="display: flex; gap: var(--space-8); margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border-color);">
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">{{ case.stat_1_value }}</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">{{ case.stat_1_label }}</div>
+            </div>
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">{{ case.stat_2_value }}</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">{{ case.stat_2_label }}</div>
+            </div>
+          </div>
+        </div>
+      </article>
+      {% else %}
+      <article class="card" data-animate="fade-up" data-delay="100">
+        <div class="card-image" style="aspect-ratio: 16/9;">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=400&fit=crop" alt="FinTech Transformation">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Finance</span>
+          <h3 class="card-title"><a href="/case-studies/fintech-transformation">Global Bank Digital Transformation</a></h3>
+          <p class="card-text">How we helped a leading financial institution increase digital adoption and reduce operational costs through comprehensive digital transformation.</p>
+          <div style="display: flex; gap: var(--space-8); margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border-color);">
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">300%</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">Digital Adoption</div>
+            </div>
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">$25M</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">Cost Savings</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-animate="fade-up" data-delay="200">
+        <div class="card-image" style="aspect-ratio: 16/9;">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&h=400&fit=crop" alt="Healthcare Analytics">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Healthcare</span>
+          <h3 class="card-title"><a href="/case-studies/healthcare-analytics">Healthcare Analytics Platform</a></h3>
+          <p class="card-text">Building a data platform for a major healthcare provider that improved patient outcomes through predictive analytics and real-time monitoring.</p>
+          <div style="display: flex; gap: var(--space-8); margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border-color);">
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">45%</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">Better Outcomes</div>
+            </div>
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">60%</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">Faster Diagnosis</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-animate="fade-up" data-delay="300">
+        <div class="card-image" style="aspect-ratio: 16/9;">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&h=400&fit=crop" alt="Retail Supply Chain">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Retail</span>
+          <h3 class="card-title"><a href="/case-studies/retail-supply-chain">Retail Supply Chain Optimization</a></h3>
+          <p class="card-text">Streamlining operations for a national retailer, resulting in significant cost reductions and improved inventory management.</p>
+          <div style="display: flex; gap: var(--space-8); margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border-color);">
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">$50M</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">Annual Savings</div>
+            </div>
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">35%</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">Faster Delivery</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-animate="fade-up" data-delay="400">
+        <div class="card-image" style="aspect-ratio: 16/9;">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&h=400&fit=crop" alt="Tech Startup">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Technology</span>
+          <h3 class="card-title"><a href="/case-studies/tech-startup-scale">Tech Startup Scaling Strategy</a></h3>
+          <p class="card-text">Helping a fast-growing tech startup scale operations and expand into new markets while maintaining product quality.</p>
+          <div style="display: flex; gap: var(--space-8); margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border-color);">
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">500%</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">Revenue Growth</div>
+            </div>
+            <div>
+              <div style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-primary);">5</div>
+              <div style="font-size: var(--text-xs); color: var(--text-tertiary);">New Markets</div>
+            </div>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {# Pagination #}
+    <nav style="display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-12);">
+      <a href="#" class="btn btn--ghost">Previous</a>
+      <a href="#" class="btn btn--primary">1</a>
+      <a href="#" class="btn btn--ghost">2</a>
+      <a href="#" class="btn btn--ghost">3</a>
+      <a href="#" class="btn btn--ghost">Next</a>
+    </nav>
+  </div>
+</section>
+
+{# CTA #}
+<section class="section">
+  <div class="container">
+    <div class="cta" data-animate="scale">
+      <h2 class="heading-lg cta-title">Ready to Write Your Success Story?</h2>
+      <p class="cta-text">Let's discuss how we can help your business achieve similar results.</p>
+      <a href="/contact" class="btn btn--white btn--lg">Start Your Project</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

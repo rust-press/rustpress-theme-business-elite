@@ -1,0 +1,152 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}{{ service.title | default(value='Service') }} | {{ site.name }}{% endblock %}
+{% block description %}{{ service.excerpt | default(value='Learn more about our service offerings.') }}{% endblock %}
+
+{% block body_class %}page-service-detail{% endblock %}
+
+{% block content %}
+{# Hero Section #}
+<section class="section" style="padding-top: calc(var(--header-height) + var(--space-16));">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+      <div data-animate="fade-up">
+        <a href="/services" class="btn btn--ghost btn--sm" style="margin-bottom: var(--space-6);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to Services
+        </a>
+        <span class="section-label">{{ service.category | default(value='Consulting') }}</span>
+        <h1 class="heading-xl" style="margin-bottom: var(--space-6);">{{ service.title | default(value='Strategy Consulting') }}</h1>
+        <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-8);">
+          {{ service.description | default(value='Develop winning strategies that align with your vision and drive measurable results. Our expert consultants work alongside your team to identify opportunities and overcome challenges.') }}
+        </p>
+        <a href="/contact" class="btn btn--primary btn--lg">Get Started</a>
+      </div>
+      <div data-animate="fade-up" data-delay="200">
+        <img src="{{ service.image | default(value='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=500&fit=crop') }}" alt="{{ service.title }}" style="border-radius: var(--radius-2xl);">
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Features #}
+<section class="section bg-secondary">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-label">What's Included</span>
+      <h2 class="heading-lg">Key Features</h2>
+    </div>
+
+    <div class="grid grid-3">
+      {% for feature in service.features %}
+      <div class="feature-item" data-animate="fade-up" data-delay="{{ loop.index * 100 }}">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 class="feature-title">{{ feature.title }}</h3>
+        <p class="feature-text">{{ feature.description }}</p>
+      </div>
+      {% else %}
+      <div class="feature-item" data-animate="fade-up" data-delay="100">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 class="feature-title">Market Analysis</h3>
+        <p class="feature-text">In-depth analysis of your market position and competitive landscape.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="200">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 class="feature-title">Growth Strategy</h3>
+        <p class="feature-text">Custom strategies to accelerate your business growth.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="300">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 class="feature-title">Implementation Support</h3>
+        <p class="feature-text">Hands-on support to execute your strategy effectively.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="400">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 class="feature-title">Performance Metrics</h3>
+        <p class="feature-text">KPIs and dashboards to track your progress.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="500">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 class="feature-title">Ongoing Support</h3>
+        <p class="feature-text">Continuous guidance and optimization recommendations.</p>
+      </div>
+      <div class="feature-item" data-animate="fade-up" data-delay="600">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 class="feature-title">Training & Workshops</h3>
+        <p class="feature-text">Empower your team with knowledge and skills transfer.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# Process #}
+<section class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+      <div data-animate="fade-up">
+        <span class="section-label">Our Approach</span>
+        <h2 class="heading-lg" style="margin-bottom: var(--space-6);">How We Deliver Results</h2>
+        <div style="margin-bottom: var(--space-6);">
+          <div style="display: flex; gap: var(--space-4); margin-bottom: var(--space-4);">
+            <div style="width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: var(--font-bold); flex-shrink: 0;">1</div>
+            <div>
+              <h4 style="font-weight: var(--font-semibold); margin-bottom: var(--space-1);">Assessment & Discovery</h4>
+              <p style="color: var(--text-secondary); font-size: var(--text-sm);">We start by understanding your business, goals, and challenges.</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: var(--space-4); margin-bottom: var(--space-4);">
+            <div style="width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: var(--font-bold); flex-shrink: 0;">2</div>
+            <div>
+              <h4 style="font-weight: var(--font-semibold); margin-bottom: var(--space-1);">Strategy Development</h4>
+              <p style="color: var(--text-secondary); font-size: var(--text-sm);">We create a customized roadmap based on data and best practices.</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: var(--space-4); margin-bottom: var(--space-4);">
+            <div style="width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: var(--font-bold); flex-shrink: 0;">3</div>
+            <div>
+              <h4 style="font-weight: var(--font-semibold); margin-bottom: var(--space-1);">Implementation</h4>
+              <p style="color: var(--text-secondary); font-size: var(--text-sm);">We work alongside your team to execute the strategy.</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: var(--space-4);">
+            <div style="width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: var(--font-bold); flex-shrink: 0;">4</div>
+            <div>
+              <h4 style="font-weight: var(--font-semibold); margin-bottom: var(--space-1);">Measure & Optimize</h4>
+              <p style="color: var(--text-secondary); font-size: var(--text-sm);">We track results and continuously refine the approach.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-animate="fade-up" data-delay="200">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=500&fit=crop" alt="Our Process" style="border-radius: var(--radius-2xl);">
+      </div>
+    </div>
+  </div>
+</section>
+
+{# CTA #}
+<section class="section">
+  <div class="container">
+    <div class="cta" data-animate="scale">
+      <h2 class="heading-lg cta-title">Ready to Get Started?</h2>
+      <p class="cta-text">Contact us today to discuss how we can help your business succeed.</p>
+      <a href="/contact" class="btn btn--white btn--lg">Schedule a Consultation</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

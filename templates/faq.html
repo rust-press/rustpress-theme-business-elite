@@ -1,0 +1,161 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}FAQ | {{ site.name }}{% endblock %}
+{% block description %}Frequently asked questions about our services and how we work.{% endblock %}
+
+{% block body_class %}page-faq{% endblock %}
+
+{% block content %}
+{# Hero Section #}
+<section class="section" style="padding-top: calc(var(--header-height) + var(--space-16));">
+  <div class="container">
+    <div class="section-header text-center" style="max-width: 700px;">
+      <span class="section-label">FAQ</span>
+      <h1 class="heading-display">Frequently Asked <span class="text-gradient">Questions</span></h1>
+      <p class="lead" style="margin-top: var(--space-6);">
+        Find answers to common questions about our services, process, and how we can help your business.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# FAQ Sections #}
+<section class="section pt-0">
+  <div class="container">
+    <div style="max-width: 800px; margin: 0 auto;">
+      {# General Questions #}
+      <h2 class="heading-sm" style="margin-bottom: var(--space-6);" data-animate="fade-up">General Questions</h2>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="100">
+        <button class="faq-question">
+          What services does Business Elite offer?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We offer a comprehensive range of business consulting services including strategy consulting, digital transformation, data analytics, change management, market expansion, and IT consulting. Each service is tailored to meet your specific business needs.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="150">
+        <button class="faq-question">
+          What industries do you work with?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We work with clients across various industries including financial services, healthcare, retail, technology, manufacturing, and more. Our team has deep expertise in multiple sectors, allowing us to bring relevant insights and best practices to every engagement.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="200">
+        <button class="faq-question">
+          How long have you been in business?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Business Elite was founded in 2009. We have over 15 years of experience helping businesses transform and grow, with a proven track record of delivering results for over 500 clients worldwide.</div>
+        </div>
+      </div>
+
+      {# Process Questions #}
+      <h2 class="heading-sm" style="margin: var(--space-12) 0 var(--space-6);" data-animate="fade-up">Working With Us</h2>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="100">
+        <button class="faq-question">
+          What does your engagement process look like?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Our process typically includes four phases: Discovery (understanding your needs), Strategy (developing a customized roadmap), Implementation (executing the plan), and Optimization (measuring and improving results). We work closely with your team throughout every phase to ensure alignment and success.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="150">
+        <button class="faq-question">
+          How long does a typical project take?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Project duration varies based on scope and complexity. A focused strategy engagement might take 4-8 weeks, while a comprehensive transformation initiative could span 6-12 months. During our initial consultation, we'll provide a realistic timeline based on your specific needs.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="200">
+        <button class="faq-question">
+          Can you work with our existing team?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Absolutely! We believe collaboration is key to success. Our consultants work alongside your internal team, bringing expertise while ensuring knowledge transfer. This approach helps build internal capabilities that last long after the engagement ends.</div>
+        </div>
+      </div>
+
+      {# Pricing Questions #}
+      <h2 class="heading-sm" style="margin: var(--space-12) 0 var(--space-6);" data-animate="fade-up">Pricing & Plans</h2>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="100">
+        <button class="faq-question">
+          How is your pricing structured?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We offer flexible pricing models including monthly retainers (Starter, Professional, Enterprise tiers) and project-based pricing for specific initiatives. Our pricing is transparent with no hidden fees. Visit our pricing page for detailed information.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="150">
+        <button class="faq-question">
+          Do you offer a money-back guarantee?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, we offer a 30-day money-back guarantee for new clients. If you're not satisfied with our services within the first 30 days, we'll provide a full refund. We're confident in the value we deliver.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="200">
+        <button class="faq-question">
+          Can I change plans after signing up?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle. Our team can help you determine the best plan as your needs evolve.</div>
+        </div>
+      </div>
+
+      {# Results Questions #}
+      <h2 class="heading-sm" style="margin: var(--space-12) 0 var(--space-6);" data-animate="fade-up">Results & Outcomes</h2>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="100">
+        <button class="faq-question">
+          What kind of results can I expect?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Results vary by engagement, but our clients typically see significant improvements in operational efficiency, revenue growth, cost reduction, and customer satisfaction. We work with you to define clear KPIs and measure progress throughout the engagement.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-animate="fade-up" data-delay="150">
+        <button class="faq-question">
+          How do you measure success?
+          <span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We establish measurable objectives and KPIs at the start of every engagement. Progress is tracked through regular reporting and dashboards. We believe in data-driven results and hold ourselves accountable to delivering tangible outcomes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# CTA #}
+<section class="section bg-secondary">
+  <div class="container text-center">
+    <h2 class="heading-lg" data-animate="fade-up">Still Have Questions?</h2>
+    <p style="color: var(--text-secondary); margin: var(--space-4) auto var(--space-8); max-width: 500px;" data-animate="fade-up" data-delay="100">
+      We're here to help. Contact our team for personalized answers.
+    </p>
+    <a href="/contact" class="btn btn--primary btn--lg" data-animate="fade-up" data-delay="200">Contact Us</a>
+  </div>
+</section>
+{% endblock %}
